@@ -1,12 +1,14 @@
-print("Hello Devops")
+import requests
 
-print("Hello piyarul")
+def health_check(url):
+  try:
+    response = requests.get(url, timeout=5)
+    if response.status_code == 200:
+      print("Service is UP")
+    else:
+     print("Service is DOWN")
+  except Exception as e:
+    print("Service is  DOWN")
+    print("Error:", e)
 
-a = 10
-b = 20
-
-sum = a+b
-
-print("First number:", a)
-print("Second number:", b)
-print("Sum is:", sum)
+health_check("http://localhost:8080")

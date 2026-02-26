@@ -1,4 +1,4 @@
-import requsts
+import requests
 
 def health_check(url):
   try:

@@ -11,5 +11,5 @@ def health_check(url):
     print("Service is DOWN")
     print("Error.", e)
 
-helth_check("http://localhost:8080")
+health_check("http://localhost:8080")
 
